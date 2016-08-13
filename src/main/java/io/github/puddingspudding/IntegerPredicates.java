@@ -17,13 +17,10 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
- * Generic predicates.
+ * Generic Integer predicates.
  */
-public final class Predicates {
+public final class IntegerPredicates {
 
-    /**
-     * Integer comparison
-     */
     public static Predicate<Integer> isEqualTo(final Integer i1) {
         return i2 -> i1 == i2;
     }
@@ -37,7 +34,7 @@ public final class Predicates {
     }
 
     public static Predicate<Integer> isSmallerThan(final Integer i1) {
-        return i2 -> i1 < i2;
+        return i2 -> i1 > i2;
     }
 
     public static Predicate<Integer> isEqualOrBiggerThan(final Integer i1) {
@@ -56,15 +53,19 @@ public final class Predicates {
         return max -> isInRange(min).apply(max).negate();
     }
 
-    public static final Predicate<Integer> isNegative = isSmallerThan(0);
-
-    public static final Predicate<Integer> isPositive = isBiggerThan(0);
-
-    public static final Predicate<Integer> isEven = i -> i % 2 == 0;
-
-    public static final Predicate<Integer> isOdd = isEven.negate();
-
-    private Predicates() {
+    public static final Boolean isNegative(final Integer i) {
+        return isSmallerThan(0).test(i);
     }
 
+    public static final Boolean isPositive(final Integer i) {
+        return isBiggerThan(0).test(i);
+    }
+
+    public static final Boolean isEven(final Integer i) {
+        return i % 2 == 0;
+    }
+
+    public static final Boolean isOdd(final Integer i) {
+        return !isEven(i);
+    }
 }
