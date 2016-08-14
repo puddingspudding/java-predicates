@@ -22,7 +22,7 @@ The intention of this project is to improve readability of equality and relation
 ## Examples
 
 ```java
-import static io.github.puddingspudding.IntegerPredicates.*;
+import static com.github.puddingspudding.IntegerPredicates.*;
 
 // isEqualTo
 Predicate<Integer> isEqualToOne = isEqualTo(1);

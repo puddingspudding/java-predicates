@@ -1,4 +1,4 @@
-package io.github.puddingspudding;
+package com.github.puddingspudding;
 
 import org.junit.Test;
 
