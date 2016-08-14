@@ -23,6 +23,7 @@ The intention of this project is to improve readability of equality and relation
 
 ```java
 import static com.github.puddingspudding.IntegerPredicates.*;
+import static com.github.puddingspudding.LongPredicates.*;
 
 // isEqualTo
 Predicate<Integer> isEqualToOne = isEqualTo(1);
