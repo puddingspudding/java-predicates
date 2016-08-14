@@ -7,12 +7,12 @@ The intention of this project is to improve readability of equality and relation
 ## Predicates
 - **isEqualTo** | a == b
 - **isNotEqualTo** | a != b
-- **isBiggerThan **| a > b
+- **isBiggerThan** | a > b
 - **isSmallerThan** | a < b
 - **isEqualOrBiggerThan** | a >= b
 - **isEqualOrSmallerThan** | a <= b
 - **isInRange** | a <= c && c <= b
-- **isNotInRage **| a > c || c < b
+- **isNotInRage** | a > c || c < b
 - **isNegative** | a < 0
 - **isPositive** | a > 0
 - **isEven** | a % 2 == 0
