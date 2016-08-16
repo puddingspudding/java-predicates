@@ -43,6 +43,17 @@
         </repository>
     </distributionManagement>
 
+    <developers>
+        <developer>
+            <name>Philip Strecker</name>
+            <url>https://github.com/puddingspudding/java-predicates</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/puddingspudding/java-predicates</url>
+    </scm>
+
     <build>
         <plugins>
             <plugin>
