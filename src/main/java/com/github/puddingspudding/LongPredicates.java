@@ -53,20 +53,20 @@ public final class LongPredicates {
         return max -> isInRange(min).apply(max).negate();
     }
 
-    public static final Boolean isNegative(final Long i) {
-        return isSmallerThan(0L).test(i);
+    public static final Predicate<Long> isNegative() {
+        return isSmallerThan(0L);
     }
 
-    public static final Boolean isPositive(final Long i) {
-        return isBiggerThan(0L).test(i);
+    public static final Predicate<Long> isPositive() {
+        return isBiggerThan(0L);
     }
 
-    public static final Boolean isEven(final Long i) {
-        return i % 2 == 0;
+    public static final Predicate<Long> isEven() {
+        return i -> i % 2 == 0;
     }
 
-    public static final Boolean isOdd(final Long i) {
-        return !isEven(i);
+    public static final Predicate<Long> isOdd() {
+        return isEven().negate();
     }
 
     private LongPredicates() { }

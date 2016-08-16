@@ -69,28 +69,28 @@ public final class IntegerPredicatesTest {
 
     @Test
     public void isNegative() {
-        assertTrue(IntegerPredicates.isNegative(-1));
-        assertFalse(IntegerPredicates.isNegative(0));
-        assertFalse(IntegerPredicates.isNegative(1));
+        assertTrue(IntegerPredicates.isNegative().test(-1));
+        assertFalse(IntegerPredicates.isNegative().test(0));
+        assertFalse(IntegerPredicates.isNegative().test(1));
     }
 
     @Test
     public void isPositive() {
-        assertTrue(IntegerPredicates.isPositive(1));
-        assertFalse(IntegerPredicates.isPositive(0));
-        assertFalse(IntegerPredicates.isPositive(-1));
+        assertTrue(IntegerPredicates.isPositive().test(1));
+        assertFalse(IntegerPredicates.isPositive().test(0));
+        assertFalse(IntegerPredicates.isPositive().test(-1));
     }
 
     @Test
     public void isEven() {
-        assertTrue(IntegerPredicates.isEven(2));
-        assertFalse(IntegerPredicates.isEven(1));
+        assertTrue(IntegerPredicates.isEven().test(2));
+        assertFalse(IntegerPredicates.isEven().test(1));
     }
 
     @Test
     public void idOdd() {
-        assertTrue(IntegerPredicates.isOdd(1));
-        assertFalse(IntegerPredicates.isOdd(2));
+        assertTrue(IntegerPredicates.isOdd().test(1));
+        assertFalse(IntegerPredicates.isOdd().test(2));
     }
 
 }

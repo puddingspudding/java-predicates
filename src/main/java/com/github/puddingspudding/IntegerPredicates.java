@@ -53,19 +53,19 @@ public final class IntegerPredicates {
         return max -> isInRange(min).apply(max).negate();
     }
 
-    public static final Boolean isNegative(final Integer i) {
-        return isSmallerThan(0).test(i);
+    public static final Predicate<Integer> isNegative() {
+        return isSmallerThan(0);
     }
 
-    public static final Boolean isPositive(final Integer i) {
-        return isBiggerThan(0).test(i);
+    public static final Predicate<Integer> isPositive() {
+        return isBiggerThan(0);
     }
 
-    public static final Boolean isEven(final Integer i) {
-        return i % 2 == 0;
+    public static final Predicate<Integer> isEven() {
+        return i -> i % 2 == 0;
     }
 
-    public static final Boolean isOdd(final Integer i) {
-        return !isEven(i);
+    public static final Predicate<Integer> isOdd() {
+        return isEven().negate();
     }
 }

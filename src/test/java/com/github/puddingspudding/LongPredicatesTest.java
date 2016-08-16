@@ -69,28 +69,28 @@ public class LongPredicatesTest {
 
     @Test
     public void isNegative() {
-        assertTrue(LongPredicates.isNegative(-1L));
-        assertFalse(LongPredicates.isNegative(0L));
-        assertFalse(LongPredicates.isNegative(1L));
+        assertTrue(LongPredicates.isNegative().test(-1L));
+        assertFalse(LongPredicates.isNegative().test(0L));
+        assertFalse(LongPredicates.isNegative().test(1L));
     }
 
     @Test
     public void isPositive() {
-        assertTrue(LongPredicates.isPositive(1L));
-        assertFalse(LongPredicates.isPositive(0L));
-        assertFalse(LongPredicates.isPositive(-1L));
+        assertTrue(LongPredicates.isPositive().test(1L));
+        assertFalse(LongPredicates.isPositive().test(0L));
+        assertFalse(LongPredicates.isPositive().test(-1L));
     }
 
     @Test
     public void isEven() {
-        assertTrue(LongPredicates.isEven(2L));
-        assertFalse(LongPredicates.isEven(1L));
+        assertTrue(LongPredicates.isEven().test(2L));
+        assertFalse(LongPredicates.isEven().test(1L));
     }
 
     @Test
     public void idOdd() {
-        assertTrue(LongPredicates.isOdd(1L));
-        assertFalse(LongPredicates.isOdd(2L));
+        assertTrue(LongPredicates.isOdd().test(1L));
+        assertFalse(LongPredicates.isOdd().test(2L));
     }
 
 }
