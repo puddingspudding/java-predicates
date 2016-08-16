@@ -32,8 +32,8 @@ if (isEqualToOne.test(1)) {
 }
 
 // isNotEqualTo
-Predicate<Integer> isNotEqualToOne = isNotEqualTo(2);
-if (isNotEqualToOne.test(1)) {
+Predicate<Integer> isNotEqualToOne = isNotEqualTo(1);
+if (isNotEqualToOne.test(2)) {
     // do something
 }
 
