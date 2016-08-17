@@ -49,6 +49,14 @@ public final class LongPredicates {
         return max -> isEqualOrBiggerThan(min).and(isEqualOrSmallerThan(max));
     }
 
+    public static Predicate<Long> isInRange(final Long min, final Long max) {
+        return isEqualOrSmallerThan(max).and(isEqualOrBiggerThan(min));
+    }
+
+    public static Predicate<Long> isNotInRange(final Long min, final Long max) {
+        return isInRange(min, max).negate();
+    }
+
     public static Function<Long, Predicate<Long>> isNotInRange(final Long min) {
         return max -> isInRange(min).apply(max).negate();
     }

@@ -56,6 +56,12 @@ public final class IntegerPredicatesTest {
         assertTrue(IntegerPredicates.isInRange(0).apply(99).test(50));
         assertFalse(IntegerPredicates.isInRange(0).apply(99).test(100));
         assertFalse(IntegerPredicates.isInRange(0).apply(99).test(-1));
+
+        assertTrue(IntegerPredicates.isInRange(0, 99).test(99));
+        assertTrue(IntegerPredicates.isInRange(0, 99).test(0));
+        assertTrue(IntegerPredicates.isInRange(0, 99).test(50));
+        assertFalse(IntegerPredicates.isInRange(0, 99).test(100));
+        assertFalse(IntegerPredicates.isInRange(0, 99).test(-1));
     }
 
     @Test
@@ -65,6 +71,12 @@ public final class IntegerPredicatesTest {
         assertFalse(IntegerPredicates.isNotInRange(0).apply(99).test(50));
         assertTrue(IntegerPredicates.isNotInRange(0).apply(99).test(100));
         assertTrue(IntegerPredicates.isNotInRange(0).apply(99).test(-1));
+
+        assertFalse(IntegerPredicates.isNotInRange(0, 99).test(99));
+        assertFalse(IntegerPredicates.isNotInRange(0, 99).test(0));
+        assertFalse(IntegerPredicates.isNotInRange(0, 99).test(50));
+        assertTrue(IntegerPredicates.isNotInRange(0, 99).test(100));
+        assertTrue(IntegerPredicates.isNotInRange(0, 99).test(-1));
     }
 
     @Test

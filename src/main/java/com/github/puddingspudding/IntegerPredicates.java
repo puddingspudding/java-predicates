@@ -13,6 +13,7 @@
  */
 package com.github.puddingspudding;
 
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -47,6 +48,14 @@ public final class IntegerPredicates {
 
     public static Function<Integer, Predicate<Integer>> isInRange(final Integer min) {
         return max -> isEqualOrBiggerThan(min).and(isEqualOrSmallerThan(max));
+    }
+
+    public static Predicate<Integer> isInRange(final Integer min, final Integer max) {
+        return isEqualOrSmallerThan(max).and(isEqualOrBiggerThan(min));
+    }
+
+    public static Predicate<Integer> isNotInRange(final Integer min, final Integer max) {
+        return isInRange(min, max).negate();
     }
 
     public static Function<Integer, Predicate<Integer>> isNotInRange(final Integer min) {

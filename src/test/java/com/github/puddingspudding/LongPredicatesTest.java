@@ -56,6 +56,12 @@ public class LongPredicatesTest {
         assertTrue(LongPredicates.isInRange(0L).apply(99L).test(50L));
         assertFalse(LongPredicates.isInRange(0L).apply(99L).test(100L));
         assertFalse(LongPredicates.isInRange(0L).apply(99L).test(-1L));
+
+        assertTrue(LongPredicates.isInRange(0L, 99L).test(99L));
+        assertTrue(LongPredicates.isInRange(0L, 99L).test(0L));
+        assertTrue(LongPredicates.isInRange(0L, 99L).test(50L));
+        assertFalse(LongPredicates.isInRange(0L, 99L).test(100L));
+        assertFalse(LongPredicates.isInRange(0L, 99L).test(-1L));
     }
 
     @Test
@@ -65,6 +71,12 @@ public class LongPredicatesTest {
         assertFalse(LongPredicates.isNotInRange(0L).apply(99L).test(50L));
         assertTrue(LongPredicates.isNotInRange(0L).apply(99L).test(100L));
         assertTrue(LongPredicates.isNotInRange(0L).apply(99L).test(-1L));
+
+        assertFalse(LongPredicates.isNotInRange(0L, 99L).test(99L));
+        assertFalse(LongPredicates.isNotInRange(0L, 99L).test(0L));
+        assertFalse(LongPredicates.isNotInRange(0L, 99L).test(50L));
+        assertTrue(LongPredicates.isNotInRange(0L, 99L).test(100L));
+        assertTrue(LongPredicates.isNotInRange(0L, 99L).test(-1L));
     }
 
     @Test
