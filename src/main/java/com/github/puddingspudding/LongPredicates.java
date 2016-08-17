@@ -21,43 +21,43 @@ import java.util.function.Predicate;
  */
 public final class LongPredicates {
 
-    public static Predicate<Long> isEqualTo(final Long i1) {
+    public static Predicate<Long> isEqualTo(final long i1) {
         return i2 -> i1 == i2;
     }
 
-    public static Predicate<Long> isNotEqualTo(final Long i1) {
+    public static Predicate<Long> isNotEqualTo(final long i1) {
         return isEqualTo(i1).negate();
     }
 
-    public static Predicate<Long> isBiggerThan(final Long i1) {
+    public static Predicate<Long> isBiggerThan(final long i1) {
         return i2 -> i1 < i2;
     }
 
-    public static Predicate<Long> isSmallerThan(final Long i1) {
+    public static Predicate<Long> isSmallerThan(final long i1) {
         return i2 -> i1 > i2;
     }
 
-    public static Predicate<Long> isEqualOrBiggerThan(final Long i1) {
+    public static Predicate<Long> isEqualOrBiggerThan(final long i1) {
         return isSmallerThan(i1).negate();
     }
 
-    public static Predicate<Long> isEqualOrSmallerThan(final Long i1) {
+    public static Predicate<Long> isEqualOrSmallerThan(final long i1) {
         return isBiggerThan(i1).negate();
     }
 
-    public static Function<Long, Predicate<Long>> isInRange(final Long min) {
+    public static Function<Long, Predicate<Long>> isInRange(final long min) {
         return max -> isEqualOrBiggerThan(min).and(isEqualOrSmallerThan(max));
     }
 
-    public static Predicate<Long> isInRange(final Long min, final Long max) {
+    public static Predicate<Long> isInRange(final long min, final long max) {
         return isEqualOrSmallerThan(max).and(isEqualOrBiggerThan(min));
     }
 
-    public static Predicate<Long> isNotInRange(final Long min, final Long max) {
+    public static Predicate<Long> isNotInRange(final long min, final long max) {
         return isInRange(min, max).negate();
     }
 
-    public static Function<Long, Predicate<Long>> isNotInRange(final Long min) {
+    public static Function<Long, Predicate<Long>> isNotInRange(final long min) {
         return max -> isInRange(min).apply(max).negate();
     }
 

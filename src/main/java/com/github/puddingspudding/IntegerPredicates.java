@@ -13,7 +13,6 @@
  */
 package com.github.puddingspudding;
 
-import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -22,43 +21,43 @@ import java.util.function.Predicate;
  */
 public final class IntegerPredicates {
 
-    public static Predicate<Integer> isEqualTo(final Integer i1) {
+    public static Predicate<Integer> isEqualTo(final int i1) {
         return i2 -> i1 == i2;
     }
 
-    public static Predicate<Integer> isNotEqualTo(final Integer i1) {
+    public static Predicate<Integer> isNotEqualTo(final int i1) {
         return isEqualTo(i1).negate();
     }
 
-    public static Predicate<Integer> isBiggerThan(final Integer i1) {
+    public static Predicate<Integer> isBiggerThan(final int i1) {
         return i2 -> i1 < i2;
     }
 
-    public static Predicate<Integer> isSmallerThan(final Integer i1) {
+    public static Predicate<Integer> isSmallerThan(final int i1) {
         return i2 -> i1 > i2;
     }
 
-    public static Predicate<Integer> isEqualOrBiggerThan(final Integer i1) {
+    public static Predicate<Integer> isEqualOrBiggerThan(final int i1) {
         return isSmallerThan(i1).negate();
     }
 
-    public static Predicate<Integer> isEqualOrSmallerThan(final Integer i1) {
+    public static Predicate<Integer> isEqualOrSmallerThan(final int i1) {
         return isBiggerThan(i1).negate();
     }
 
-    public static Function<Integer, Predicate<Integer>> isInRange(final Integer min) {
+    public static Function<Integer, Predicate<Integer>> isInRange(final int min) {
         return max -> isEqualOrBiggerThan(min).and(isEqualOrSmallerThan(max));
     }
 
-    public static Predicate<Integer> isInRange(final Integer min, final Integer max) {
+    public static Predicate<Integer> isInRange(final int min, final int max) {
         return isEqualOrSmallerThan(max).and(isEqualOrBiggerThan(min));
     }
 
-    public static Predicate<Integer> isNotInRange(final Integer min, final Integer max) {
+    public static Predicate<Integer> isNotInRange(final int min, final int max) {
         return isInRange(min, max).negate();
     }
 
-    public static Function<Integer, Predicate<Integer>> isNotInRange(final Integer min) {
+    public static Function<Integer, Predicate<Integer>> isNotInRange(final int min) {
         return max -> isInRange(min).apply(max).negate();
     }
 
