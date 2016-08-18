@@ -4,6 +4,15 @@ The intention of this project is to improve readability of equality and relation
 It also contains a Predicate interface with then(), orElse() and elseIf() to replace if-then and if-then-else statements.
 
 ----------
+## mvn
+```xml
+<dependency>
+    <groupId>com.github.puddingspudding</groupId>
+    <artifactId>predicates</artifactId>
+    <version>0.3</version>
+</dependency>
+----------
+```
 
 ## Predicates
 - **isEqualTo** { a == b }
