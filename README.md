@@ -11,8 +11,8 @@ It also contains a Predicate interface with then(), orElse() and elseIf() to rep
     <artifactId>predicates</artifactId>
     <version>0.3</version>
 </dependency>
-----------
 ```
+----------
 
 ## Predicates
 - **isEqualTo** { a == b }
