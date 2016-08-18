@@ -62,8 +62,13 @@ import java.util.function.Predicate;
 import com.github.puddingspudding.Predicates;
 
 Predicate<Integer> isEqualToOne = i -> i == 1;
+Predicate<Integer> isEqualToOne = i -> i == 2;
 
 Predicates.of(isEqualToOne)
+    .then(() -> {
+        // do stuff
+    })
+    .elseIf(isEqualToTwo)
     .then(() -> {
         // do stuff
     })
