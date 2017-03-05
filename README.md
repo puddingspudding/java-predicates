@@ -28,11 +28,6 @@ It also contains a Predicate interface with then(), orElse() and elseIf() to rep
 - **isEven** { x % 2 == 0 }
 - **isOdd** { x % 2 != 0 }
 
-## com.github.puddingspudding.Predicate
-- **then(Runnable)**
-- **orElse(Runnable)**
-- **elseIf(Runnable)**
-
 ## Examples
 ### java.util.function.Predicate
 ```java
@@ -63,28 +58,6 @@ Stream.of(1,2,3,4,5,6)
 	.filter(isBiggerThan(3))
 	.collect(Collectors.toList());
 	// [4, 5, 6]
-
-```
-### com.github.puddingspudding.Predicate
-```java
-import java.util.function.Predicate;
-import com.github.puddingspudding.Predicates;
-
-Predicate<Integer> isEqualToOne = i -> i == 1;
-Predicate<Integer> isEqualToOne = i -> i == 2;
-
-Predicates.of(isEqualToOne)
-    .then(() -> {
-        // do stuff
-    })
-    .elseIf(isEqualToTwo)
-    .then(() -> {
-        // do stuff
-    })
-    .orElse(() -> {
-        // do stuff
-    });
-    .test(1);
 
 ```
 

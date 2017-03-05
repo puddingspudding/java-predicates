@@ -15,6 +15,7 @@ package com.github.puddingspudding;
 /**
  * Helper class for {@link Predicate}.
  */
+@Deprecated
 public final class Predicates {
 
     public static <T> Predicate<T> of(java.util.function.Predicate<T> p) {

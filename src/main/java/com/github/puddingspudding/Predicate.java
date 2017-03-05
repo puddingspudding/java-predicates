@@ -18,6 +18,7 @@ import java.util.Objects;
  * Predicate extended with then(), orElse() and elseIf().
  */
 @FunctionalInterface
+@Deprecated
 public interface Predicate<T> extends java.util.function.Predicate<T> {
 
     default Predicate<T> then(Runnable r) {
