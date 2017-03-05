@@ -9,7 +9,7 @@ It also contains a Predicate interface with then(), orElse() and elseIf() to rep
 <dependency>
     <groupId>com.github.puddingspudding</groupId>
     <artifactId>predicates</artifactId>
-    <version>0.3</version>
+    <version>0.4</version>
 </dependency>
 ```
 ----------
